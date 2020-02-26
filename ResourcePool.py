@@ -12,7 +12,7 @@ class ResourcePool:
     OxigenGenerators = []
     FoodReplicators = []
     WaterFilters = []
-
+    
     AllHeatReq: int = 0
     AllEnergyReq: int = 0
     AllOxigenReq: int = 0
@@ -38,7 +38,7 @@ class ResourcePool:
             habitatList.append(Habitat("Sea"))
             habitatList.append(Habitat("Arctic"))
             habitatList.append(Habitat("Savannah"))
-            HeatCollectors.append(HeatCollector()
+            HeatCollectors.append(HeatCollector())
             SolarPanels.append(SolarPanel())
             FoodReplicators.append(FoodReplicator())
             OxigenGenerators.append(OxigenGenerator())
@@ -94,32 +94,32 @@ class ResourcePool:
             WaterFilters.append(WaterFilter())
             SumAllCapacity()
     def SetLoad(self): # Set the neccessary loads
-        HeatLoad = Math.Round(AllHeatReq / (decimal)AllHeatCapacity * 100, 0)
-        EnergyLoad = Math.Round(AllEnergyReq / (decimal)AllEnergyCapacity * 100, 0)
-        FoodLoad = Math.Round(AllFoodReq / (decimal)AllFoodCapacity * 100, 0)
-        OxigenLoad = Math.Round(AllOxigenReq / (decimal)AllOxigenCapacity * 100, 0)
-        WaterLoad = Math.Round(AllWaterReq / (decimal)AllWaterCapacity * 100, 0)
+        HeatLoad = round(AllHeatReq / AllHeatCapacity * 100, 0)
+        EnergyLoad = round(AllEnergyReq / AllEnergyCapacity * 100, 0)
+        FoodLoad = round(AllFoodReq / AllFoodCapacity * 100, 0)
+        OxigenLoad = round(AllOxigenReq / AllOxigenCapacity * 100, 0)
+        WaterLoad = round(AllWaterReq / AllWaterCapacity * 100, 0)
     def CreatingAHabitat(self, habitatName): # Creating a new habitat
         NewHabitat = Habitat(habitatName)
         habitatList.Add(NewHabitat)
     def RemovingAHabitat(self, habitatName): # Removing a new habitat
         if not IsHabitatExist(habitatName):
-            throw new HabitatNotExistException()
+            raise HabitatNotExistException()
         for (int index = habitatList.Count-1; index >= 0; index--)
             if habitatList[index].HabitatName == habitatName:
                 if habitatList[index].AnimalList.Count > 0:
-                    throw new NotEmptyHabitatException()
+                    raise NotEmptyHabitatException()
                 habitatList.RemoveAt(index)
     def GetHabitats(self): # Get the list of all habitats
         return habitatList
     def IsHabitatExist(sself, habitatName): # Checking if the habitat exist
         for habitat in habitatList:
             if habitat.HabitatName == habitatName:
-                return true
-        return false
+                return True
+        return False
     def AddNewAnimal(self, SpeciesName, Type, Environment): # Adding new animals 
         if  not IsHabitatExist(Environment):
-            throw new HabitatNotExistException()
+            raise HabitatNotExistException()
         for habitat in habitatList:
             if habitat.HabitatName == Environment:
                 habitat.AddNewAnimal(SpeciesName, Type, Environment)
@@ -128,7 +128,7 @@ class ResourcePool:
             for animal in habitat.AnimalList:
                 if animal.OwnName == OwnName:
                     return animal
-        throw new AnimalNotExistException()
+        raiseAnimalNotExistException()
     def RelocateAnimal(self, OwnName): # Relocating (removing) an animal from the system
         for habitat in habitatList:
             habitat.RelocateAnimal(OwnName)
