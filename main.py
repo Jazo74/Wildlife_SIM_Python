@@ -1,5 +1,7 @@
+import sys
+
 class Main:
-    public ResourcePool arkOne
+    arkOne = ResourcePool()
 
     def __init__(self):
         arkOne = ResourcePool("new")
