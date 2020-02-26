@@ -1,29 +1,16 @@
 import random
 #[Serializable]
-class Animal:
+class Animal(base_species):
     ID: int
-    #rand = Random()
-    OwnName: str
-    SpeciesName: str # Tiger, Eagle
-    Type: str #carnivore, herbivore, omnivore
-    IdealEnvironment: str # Tropical, Arctic
-    ReqHeatUnit: int
-    ReqOxigenUnit: int
-    ReqFoodUnit: int
-    ReqWaterUnit: int
-    ReqEnergyUnit: int
-    # Constructor
-    def __init__ (self):
-        pass
     def __init__ (self,SpeciesName, Type, IdealEnvironment):
         ID += 1
-        OwnName = ID.ToString()
-        ReqHeatUnit = random.randint(1, 5)
-        ReqOxigenUnit = random.raint(1, 5)
-        ReqFoodUnit = random.randint(1, 5)
-        ReqWaterUnit = random.randint(1, 5)
-        ReqEnergyUnit = random.randint(1, 5)
-        this.SpeciesName = SpeciesName
-        this.Type = Type
-        this.IdealEnvironment = IdealEnvironment
+        super().IDOwnName = self.ID.ToString()
+        super().SpeciesName = SpeciesName
+        super().Type = Type
+        super().IdealEnvironment = IdealEnvironment
+        super().ReqHeatUnit = random.randint(1, 5)
+        super().ReqOxigenUnit = random.raint(1, 5)
+        super().ReqFoodUnit = random.randint(1, 5)
+        super().ReqWaterUnit = random.randint(1, 5)
+        super().ReqEnergyUnit = random.randint(1, 5)
 

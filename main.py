@@ -1,10 +1,10 @@
 class Main:
     public ResourcePool arkOne
 
-    def __init__():
+    def __init__(self):
         arkOne = ResourcePool("new")
 
-    def static void Main(string[] args)
+    def __main__(self,args):
         p = Main()
         cSim = ConsoleSimulation()
         ui = UI(cSim)
