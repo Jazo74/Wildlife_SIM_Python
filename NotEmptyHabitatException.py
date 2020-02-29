@@ -1,0 +1,2 @@
+class NotEmptyHabitatException(Exception):
+    pass

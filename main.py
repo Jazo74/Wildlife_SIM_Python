@@ -1,4 +1,6 @@
 import sys
+import ResourcePool
+import ConsoleSimulation
 
 class Main:
     arkOne = ResourcePool()

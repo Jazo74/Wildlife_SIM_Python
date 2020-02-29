@@ -1,0 +1,2 @@
+class HabitatIsExistException(Exception):
+    pass

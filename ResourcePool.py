@@ -4,6 +4,9 @@ import FoodReplicator
 import OxigenGenerator
 import SolarPanel
 import WaterFilter
+import HabitatNotExistException
+import AnimalNotExistException
+import NotEmptyHabitatException
 
 class ResourcePool:
     habitatList = []
@@ -105,14 +108,14 @@ class ResourcePool:
     def RemovingAHabitat(self, habitatName): # Removing a new habitat
         if not IsHabitatExist(habitatName):
             raise HabitatNotExistException()
-        for (int index = habitatList.Count-1; index >= 0; index--)
+        for index in range(length(habitatList)):
             if habitatList[index].HabitatName == habitatName:
                 if habitatList[index].AnimalList.Count > 0:
                     raise NotEmptyHabitatException()
                 habitatList.RemoveAt(index)
     def GetHabitats(self): # Get the list of all habitats
         return habitatList
-    def IsHabitatExist(sself, habitatName): # Checking if the habitat exist
+    def IsHabitatExist(self, habitatName): # Checking if the habitat exist
         for habitat in habitatList:
             if habitat.HabitatName == habitatName:
                 return True
@@ -128,7 +131,7 @@ class ResourcePool:
             for animal in habitat.AnimalList:
                 if animal.OwnName == OwnName:
                     return animal
-        raiseAnimalNotExistException()
+        raise AnimalNotExistException()
     def RelocateAnimal(self, OwnName): # Relocating (removing) an animal from the system
         for habitat in habitatList:
             habitat.RelocateAnimal(OwnName)

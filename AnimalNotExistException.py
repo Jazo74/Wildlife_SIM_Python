@@ -1,0 +1,2 @@
+class AnimalNotExistException(Exception):
+    pass
