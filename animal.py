@@ -1,8 +1,19 @@
 import random
+#import base_species
 #[Serializable]
-class Animal(base_species):
+class Animal:
+    OwnName: str 
+    SpeciesName: str # Tiger, Eagle
+    Type: str  # carnivore, herbivore, omnivore
+    IdealEnvironment: str  # Tropical, Arctic
+    ReqHeatUnit: int
+    ReqOxigenUnit: int
+    ReqFoodUnit: int
+    ReqWaterUnit: int
+    ReqEnergyUnit: int 
+
     ID: int
-    def __init__ (self,SpeciesName, Type, IdealEnvironment):
+    def __init__ (self, SpeciesName, Type, IdealEnvironment):
         ID += 1
         super().IDOwnName = self.ID.ToString()
         super().SpeciesName = SpeciesName

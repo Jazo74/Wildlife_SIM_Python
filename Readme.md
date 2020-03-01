@@ -27,4 +27,3 @@ CRUD functions are available on the habitats and the animals.
 
 There is an automated simulation feature.
 It is possible to save the current state of the simulation to continue it later.
-

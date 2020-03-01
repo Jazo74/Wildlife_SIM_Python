@@ -33,7 +33,7 @@ class Toolbox:
                 return False
             else:
                 print("Wrong answer!")
-    def ToolBox.InputIntBetween(self, message, min, max):
+    def InputIntBetween(self, message, min, max):
         while True:
             outNumber = InputInt(message)
             if outNumber >= min and outNumber <= max:

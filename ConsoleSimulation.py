@@ -1,9 +1,10 @@
 import os
 import ToolBox
+import time
 class ConsoleSimulation:
     # Running the simulation
     def LifeCycle(self, p, cycleTime): 
-        while not readchar. Console.KeyAvailable:
+        while True: #not readchar. Console.KeyAvailable:
             os.system("Clear")
             p.arkOne.ResourceCycle()
             ShowAnimals(p)
@@ -11,7 +12,7 @@ class ConsoleSimulation:
             ShowResourceGenerators(p)
             p.arkOne.BirthDay()
             p.arkOne.Dying()
-            Thread.Sleep(cycleTime)
+            time.Sleep(cycleTime)
     # Showing the informations of the population by zones
     def ShowAnimals(self, p):
         ToolBox.WriteLineBlue("----------------------------------------------------------------------------------------------")
@@ -19,7 +20,7 @@ class ConsoleSimulation:
         for habs in p.arkOne.GetHabitats():
             habs.SumAnimals()
             print(habs.HabitatName.PadRight(18))
-            for KeyValuePair<string, int> x in habs.AnimalDict:
+            for x in habs.AnimalDict:
                 tempString: str = x.Key.PadRight(11) + " " + x.Value
                 print(tempString.PadRight(17))
             print()

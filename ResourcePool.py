@@ -7,6 +7,7 @@ import WaterFilter
 import HabitatNotExistException
 import AnimalNotExistException
 import NotEmptyHabitatException
+import os
 
 class ResourcePool:
     habitatList = []
@@ -108,7 +109,7 @@ class ResourcePool:
     def RemovingAHabitat(self, habitatName): # Removing a new habitat
         if not IsHabitatExist(habitatName):
             raise HabitatNotExistException()
-        for index in range(length(habitatList)):
+        for index in range(len(habitatList)):
             if habitatList[index].HabitatName == habitatName:
                 if habitatList[index].AnimalList.Count > 0:
                     raise NotEmptyHabitatException()
@@ -142,16 +143,18 @@ class ResourcePool:
         for habitat in habitatList:
             habitat.Dying()
     def SerializeMyList(self): # serializing the data to an xml file
-        XmlSerializer xmlBuild = new XmlSerializer(habitatList.GetType())
-        FileStream file = new FileStream("sanctuary.xml", FileMode.Create)
-        xmlBuild.Serialize(file, habitatList)
-        file.Close()
+        pass
+        #XmlSerializer xmlBuild = new XmlSerializer(habitatList.GetType())
+        #FileStream file = new FileStream("sanctuary.xml", FileMode.Create)
+        #xmlBuild.Serialize(file, habitatList)
+        #file.Close()
     def DeSerializeMyList(self): # deserializing the the date from an xml file
-        if  not File.Exists("sanctuary.xml"):
-            throw new FileNotExistException()
-        XmlSerializer xmlBuild = new XmlSerializer(habitatList.GetType())
-        FileStream file = new FileStream("sanctuary.xml", FileMode.Open)
-        habitatList.Clear()
-        List<Habitat> newObject = (List<Habitat>)xmlBuild.Deserialize(file)
-        habitatList = newObject
-        file.Close()
+        pass
+        #if  not os.path.Exists("sanctuary.xml"):
+        #    raise FileNotExistException()
+        #XmlSerializer xmlBuild = new XmlSerializer(habitatList.GetType())
+        #FileStream file = new FileStream("sanctuary.xml", FileMode.Open)
+        #habitatList.Clear()
+        #List<Habitat> newObject = (List<Habitat>)xmlBuild.Deserialize(file)
+        #habitatList = newObject
+        #file.Close()

@@ -7,9 +7,10 @@ import AnimalNotExistException
 import NotEmptyHabitatException
 import FileNotExistException
 import Animal
+import ConsoleSimulation
 
 class UI:
-    life = ISimulation
+    life = ConsoleSimulation
     def __init__(self, sim):
         life = sim
     
@@ -272,9 +273,9 @@ class UI:
                     loopS = SubChoiceStatistics(p)
             elif choice == "7":
                 os.system("Clear")
-                StreamReader streamReader = new StreamReader("Readme.md")
-                while not streamReader.EndOfStream:
-                    print(streamReader.ReadLine())
+                #StreamReader streamReader = new StreamReader("Readme.md")
+                #while not streamReader.EndOfStream:
+                #    print(streamReader.ReadLine())
                 ToolBox.InputAny("Press any key to continue...")
                 return True
             elif choice == "0": # Exit program
